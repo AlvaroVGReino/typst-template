@@ -15,6 +15,7 @@
   supervisor-second: "Second Supervisor's name",
   date: datetime.today(),
   // Pages in-between
+  intro: none,
   abstract-en: none,
   keywords-en: none,
   abstract-es: none,
@@ -83,7 +84,7 @@
       // set text(color)
       it
     } else {
-      set text(color-main, font: "Inconsolata", size: 12pt * 0.95)
+      set text(color-main, font: "New Computer Modern Math", size: 12pt * 0.95)
       if (it.dest.contains("orcid.org")) {
         it
       } else {
@@ -393,6 +394,14 @@
   //
   //  _ #author.name _
   //]
+  // Intro //////////////////////////////////////////////////////////////
+  if intro != none {
+    page[
+      #align(center + horizon)[
+        #align(left, intro)
+      ]
+    ]
+  }
 
   //// Abstract ///////////////////////////////////////////////////////////
 

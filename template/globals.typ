@@ -7,6 +7,11 @@
 #import "@preview/embiggen:0.0.1": *
 #import "@preview/booktabs:0.0.4": *
 
+#import "@preview/theoretic:0.4.0"
+#import theoretic.presets.bar: *
+
+#show ref: theoretic.show-ref
+
 #import "@preview/catppuccin:1.1.0": flavors, get-flavor
 
 #let flavor = get-flavor("latte")
@@ -27,6 +32,7 @@
 #let sgn(x) = $op("sgn")(#x)$
 #let argmin = $op("argmin", limits: #true)$
 #let argmax = $op("argmax", limits: #true)$
+#import "math.typ": *
 
 // https://stackoverflow.com/a/77894083/
 #let colorMath(x, color: rgb("#920576")) = text(fill: color)[$#x$]
@@ -38,12 +44,8 @@
   page~#link(loc, numbering(loc.page-numbering(), ..nums))
 ]
 
-#import "@preview/theoretic:0.4.0"
-#import theoretic.presets.bar: *
 
-#show ref: theoretic.show-ref
 
-#import "math.typ": *
 
 #let observacion = remark.with(supplement: "Observación", kind: "observacion", options: (color: rgb("#7c7f93")))
 
